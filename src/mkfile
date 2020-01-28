@@ -315,7 +315,7 @@ HFILES=\
 
 
 CFLAGS=-D_BSD_EXTENSION -D_SUSV2_SOURCE -I . -I ../include -I ../../posix/include \
- -I ../../libparserutils-0.2.4/include -I ../../libwapcaplet-0.4.1/include
+ -I ../../libparserutils/include -I ../../libwapcaplet/include
 
 # These where problematic, had to include libcss/errors.h in 'arena.h'
 #arena:V:	select/arena.8
