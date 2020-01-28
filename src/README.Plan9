@@ -1,0 +1,17 @@
+Inspired by AAP's earlier port of Netsurf, I changed enum String
+to StringE as String is alredy defined as a global identifier in
+the Plan9 environment. Two changes to the file 'lex/lex.c'.
+
+Removed bifields in parser.c (replaced 16-bit bitfields with uint16_t)
+
+in 'parse/properties/utils.c': Changed the type of temp_unit
+from css_unit to uint32_t
+
+Had to add the line:
+
+#include <libcss/errors.h>
+
+in 'select/arena.h' so that css_error is defined later (in files
+'select/arena.[ch]' and 'select/computed.[ch]'. I don't fully
+understand why, as it doesn't seem to have to be included when
+compiling under Linux.
