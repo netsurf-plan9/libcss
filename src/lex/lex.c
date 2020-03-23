@@ -1375,7 +1375,7 @@ css_error URI(css_lexer *lexer, css_token **token)
 	css_error error;
 	parserutils_error perror;
 	enum { Initial = 0, LParen = 1, W1 = 2, Quote = 3,
-		URL = 4, W2 = 5, RParen = 6, String = 7 };
+		URL = 4, W2 = 5, RParen = 6, Str = 7 };
 
 	/* URI = "url(" w (string | urlchar*) w ')'
 	 *
@@ -1518,9 +1518,9 @@ css_error URI(css_lexer *lexer, css_token **token)
 
 		APPEND(lexer, cptr, clen);
 		break;
-	case String:
+	case Str:
 	string:
-		lexer->substate = String;
+		lexer->substate = Str;
 
 		error = consumeString(lexer);
 		if (error == CSS_INVALID) {

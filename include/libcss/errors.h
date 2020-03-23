@@ -14,8 +14,9 @@ extern "C"
 #endif
 
 #include <stddef.h>
+#include <libcss/errors.h>
 
-typedef enum css_error {
+typedef enum {
 	CSS_OK               = 0,
 
 	CSS_NOMEM            = 1,
