@@ -1518,9 +1518,9 @@ css_error URI(css_lexer *lexer, css_token **token)
 
 		APPEND(lexer, cptr, clen);
 		break;
-	case Str:	/* XXX */
+	case Str:
 	string:
-		lexer->substate = Str;	/* XXX */
+		lexer->substate = Str;
 
 		error = consumeString(lexer);
 		if (error == CSS_INVALID) {
