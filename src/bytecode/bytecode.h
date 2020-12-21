@@ -96,12 +96,12 @@ static inline uint16_t getValue(css_code_t OPV)
 
 static inline bool isImportant(css_code_t OPV)
 {
-	return getFlags(OPV) & 0x1;
+	return (getFlags(OPV) & 0x1) == 0x1;
 }
 
 static inline bool isInherit(css_code_t OPV)
 {
-	return getFlags(OPV) & 0x2;
+	return (getFlags(OPV) & 0x2) == 0x2;
 }
 
 #endif
