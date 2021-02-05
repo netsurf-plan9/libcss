@@ -76,8 +76,8 @@ enum {
  */
 typedef struct parser_state
 {
-	unsigned int state : 16,
-	             substate : 16;
+	uint16_t state;
+	uint16_t substate;
 } parser_state;
 
 /**

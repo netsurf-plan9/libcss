@@ -932,7 +932,7 @@ css_error css__parse_unit_specifier(css_language *c,
 	if (token->type == CSS_TOKEN_DIMENSION) {
 		size_t len = lwc_string_length(token->idata);
 		const char *data = lwc_string_data(token->idata);
-		css_unit temp_unit = CSS_UNIT_PX;
+		uint32_t temp_unit = CSS_UNIT_PX;
 
 		error = css__parse_unit_keyword(data + consumed, len - consumed,
 				&temp_unit);
@@ -961,7 +961,7 @@ css_error css__parse_unit_specifier(css_language *c,
 			 * (e.g. "0 px")
 			 */
 			int temp_ctx = *ctx;
-			css_unit temp_unit;
+			uint32_t temp_unit;
 
 			consumeWhitespace(vector, &temp_ctx);
 
